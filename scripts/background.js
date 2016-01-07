@@ -26,15 +26,15 @@ chrome.storage.local.get("locations",  function(result){
       var re_contents = new RegExp(re_str_contents, "g");
 
       console.log("Checking against the page contents regex as well: " + re_contents);
-      match_result = re_contents.test($("html").html());      
+      match_result = re_contents.test($("html").html());
       console.log(match_result);
     }
 
     if (match_result){
           var sidebar;
           sidebar = $("<div id='sidebar'><table><tr>" +
-                      "<td class=\"notification\">" + result.locations[i].alert + "</td>" +
-                      "<td class=\"close-btn\">&#10006;</td>" +
+                      "<td class=\"notification\" bgcolor=\"#C1232D\" >" + result.locations[i].alert + "</td>" +
+                      "<td class=\"close-btn\" bgcolor=\"#C1232D\" >&#10006;</td>" +
                       "<tr></table></div>");
           sidebar.css({
             'position': 'fixed',
@@ -43,10 +43,10 @@ chrome.storage.local.get("locations",  function(result){
             'z-index': 9999,
             'width': '100%',
             'height': '50px',
-            'background-color': 'rgba(255,0,0,0.7)',
+            'background-color': '#C1232D',
             'text-align': 'center',
             'display': 'table',
-            'pointer-events': 'none'
+            'pointer-events': 'all'
           });
 
           sidebar.find('table').css({
